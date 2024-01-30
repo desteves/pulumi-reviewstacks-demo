@@ -1,0 +1,11 @@
+{
+    "name": "review-stacks",
+    "main": "index.ts",
+    "devDependencies": {
+        "@types/node": "^18.19.10"
+    },
+    "dependencies": {
+        "@pulumi/pulumi": "^3.103.1",
+        "@pulumi/pulumiservice": "^0.17.0"
+    }
+}
