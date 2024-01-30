@@ -1,4 +1,4 @@
-
+# Pulumi Deployments Review Stack
 
 ## Common Errors
 
@@ -29,6 +29,5 @@ $ pulumi up --yes
 #     error: failed to create deployment settings for stack (diana-pulumi-corp/pulumi-reviewstacks-demo/pr): 400 API error: Bad Request: sourceContext.git.repoUrl cannot be specified when using GitHub integration
 ## FIX
 # Remove sourceContext.git.repoUrl
-
 
 ```

@@ -1,5 +1,11 @@
 # pulumi-reviewstacks-demo
 
+Takes a Pulumi template and
+
+- Re-orgs the structure and modifies the app slightly (uses alpine)
+- Adds Pulumi ESC which contains OIDC AWS Creds
+- Adds the Pulumi Deployments Review Stack
+
 
 ## Step by step
 
@@ -20,16 +26,32 @@ $ vi infra/index.ts
 #     update ref  "./app" to ""../app"
 
 # Add ESC
-$ echo "environment:" >> infra/Pulumi.pr-on-main.yaml
-$ echo "    - pulumi-reviewstacks-demo" >> infra/Pulumi.pr-on-main.yaml
+$ echo "environment:" >> infra/Pulumi.pr.yaml
+$ echo "    - pulumi-reviewstacks-demo" >> infra/Pulumi.pr.yaml
 
-$ echo "environment:" >> infra/Pulumi.local-dev.yaml
-$ echo "    - pulumi-reviewstacks-demo" >> infra/Pulumi.local-dev.yaml
+$ echo "environment:" >> infra/Pulumi.local.yaml
+$ echo "    - pulumi-reviewstacks-demo" >> infra/Pulumi.local.yaml
 
+
+# exclude
+echo "infra/Pulumi.local.yaml" >> .gitignore
+echo "**node_modules" >> .gitignore
+
+
+# Add CI/CD
 $ mkdir -p .github/workflows 
 $ touch .github/workflows/pipeline.yml
 #     see the contents of the file
 
+
+# Add Review Stack
+$ cd infra
+$ mkdir test && cd test
+$ pulumi new typescript
+## Edit index.ts
+#    see contents of index.ts
+
+# Install the Pulumi GitHub App - https://www.pulumi.com/docs/using-pulumi/continuous-delivery/github-app/
 
 
 ```
