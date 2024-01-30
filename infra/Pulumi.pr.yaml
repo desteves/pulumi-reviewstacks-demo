@@ -1,0 +1,8 @@
+config:
+  aws:region: us-west-2
+  pulumi-reviewstacks-demo:containerPort: "80"
+  pulumi-reviewstacks-demo:cpu: "512"
+  pulumi-reviewstacks-demo:memory: "128"
+
+environment:
+ - pulumi-reviewstacks-demo-env
